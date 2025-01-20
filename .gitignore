@@ -4,3 +4,4 @@ instance
 bl
 .env
 __pycache__
+__init__.py
