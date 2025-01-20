@@ -3,3 +3,4 @@ instance
 .idea
 bl
 .env
+__pycache__
