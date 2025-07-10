@@ -30,7 +30,10 @@
 <p>All the requirements/dependencies are stated in requirements.txt file along with their version.</p><h5>Steps</h5><ul>
 <li>Clone the Repo with "git clone https://github.com/AtharvaZ/Blog-Webiste.git"</li>
 </ul><ul>
-<li>Create a Virtual Environment with "python3 -m venv venv source venv/bin/activate"</li>
+<li>Create a Virtual Environment with:<br>
+<code>python3 -m venv venv</code><br>
+<code>source venv/bin/activate</code>
+</li>
 </ul><ul>
 <li>Install requirements with "pip install -r requirements.txt"</li>
 </ul><ul>
@@ -44,6 +47,6 @@
 <li>Better navigation between pages.</li>
 </ul><ul>
 <li>A smooth feature to find other users easily.</li>
-</ul><ul>
-<li>This project was based on the python bootcamp offered by Udemy, Angela Hu.</li>
 </ul>
+#This project was based on the python bootcamp offered by Udemy, Angela Hu.#
+
