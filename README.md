@@ -29,7 +29,7 @@
 </ul><h2>Setup</h2>
 <p>All the requirements/dependencies are stated in requirements.txt file along with their version.</p><h5>Steps</h5><ul>
 <li>Clone the Repo with: <br>
-"git clone https://github.com/AtharvaZ/Blog-Webiste.git"</li>
+<code>git clone https://github.com/AtharvaZ/Blog-Webiste.git</code></li>
 </ul><ul>
 <li>Create a Virtual Environment with:<br>
 <code>python3 -m venv venv</code><br>
