@@ -28,7 +28,8 @@
 <li>Safe login with password encryption.</li>
 </ul><h2>Setup</h2>
 <p>All the requirements/dependencies are stated in requirements.txt file along with their version.</p><h5>Steps</h5><ul>
-<li>Clone the Repo with "git clone https://github.com/AtharvaZ/Blog-Webiste.git"</li>
+<li>Clone the Repo with: <br>
+<code></code>"git clone https://github.com/AtharvaZ/Blog-Webiste.git"</code></li>
 </ul><ul>
 <li>Create a Virtual Environment with:<br>
 <code>python3 -m venv venv</code><br>
