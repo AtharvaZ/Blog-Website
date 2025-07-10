@@ -29,16 +29,17 @@
 </ul><h2>Setup</h2>
 <p>All the requirements/dependencies are stated in requirements.txt file along with their version.</p><h5>Steps</h5><ul>
 <li>Clone the Repo with: <br>
-<code></code>"git clone https://github.com/AtharvaZ/Blog-Webiste.git"</code></li>
+"git clone https://github.com/AtharvaZ/Blog-Webiste.git"</li>
 </ul><ul>
 <li>Create a Virtual Environment with:<br>
 <code>python3 -m venv venv</code><br>
 <code>source venv/bin/activate</code>
 </li>
 </ul><ul>
-<li>Install requirements with "pip install -r requirements.txt"</li>
+<li>Install requirements with:<br>
+  <code>pip install -r requirements.txt</code></li>
 </ul><ul>
-<li>Run the application with python main.py</li>
+<li>Run the application with: <code>python main.py</code></li>
 </ul><h2>Usage</h2>
 <p>You can use it to record any kind of experience you have had. Add some text, some images and record your memory for you to visit it again. You can also search for your friends and look at their post and maybe leave a comment for them, they can do the same for your posts.</p><h2>Project Status</h2>
 <p>No longer working on it as it was supposed to be my first web development project. Might work on it if needed.</p><h2>Improvements</h2>
