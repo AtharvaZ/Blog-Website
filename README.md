@@ -50,5 +50,9 @@
 </ul><ul>
 <li>A smooth feature to find other users easily.</li>
 </ul>
+
+
+
+
 #This project was based on the python bootcamp offered by Udemy, Angela Hu.#
 
