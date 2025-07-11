@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
-from The_Blog.flask_tinymce import TinyMCE
+from text_editor.flask_tinymce import TinyMCE
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy import Integer, String, Text, ForeignKey
 from datetime import date
@@ -16,10 +16,11 @@ import os
 load_dotenv()
 
 
-own_email = os.getenv('EMAIL')
-own_pass = os.getenv('PASS')
+# own_email = os.getenv('EMAIL')
+# own_pass = os.getenv('PASS')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
 Bootstrap5(app)
 tinymce = TinyMCE()
 tinymce.init_app(app)
@@ -38,7 +39,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_URI", 'sqlite:///posts.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -60,7 +61,7 @@ class BlogPost(db.Model):
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
     author_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'))
-    author: Mapped[str] = relationship("User", back_populates="posts")
+    author: Mapped["User"] = relationship("User", back_populates="posts")
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
     comments = relationship("Comment", back_populates="parent_post")
 
@@ -188,7 +189,7 @@ def edit_post(post_id):
         title=post.title,
         subtitle=post.subtitle,
         img_url=post.img_url,
-        author=post.author
+        author=post.author.name
     )
     edit_form.submit.label.text = "Update Post"
 
@@ -196,7 +197,6 @@ def edit_post(post_id):
         post.title = edit_form.title.data
         post.subtitle = edit_form.subtitle.data
         post.img_url = edit_form.img_url.data
-        post.author = edit_form.author.data
         post.body = request.form.get('tinymce')
         db.session.commit()
         return redirect(url_for("show_post", post_id=post.id))
@@ -217,21 +217,21 @@ def about():
     return render_template("about.html", current_user=current_user)
 
 
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        data = request.form
-        email_message = (f"Subject:New Message\n\nName: {data['name']}\nEmail: {data['email']}\n"
-                         f"Phone: {data['phone']}\nMessage:{data['message']}")
+# @app.route("/contact", methods=["GET", "POST"])
+# def contact():
+#     if request.method == "POST":
+#         data = request.form
+#         email_message = (f"Subject:New Message\n\nName: {data['name']}\nEmail: {data['email']}\n"
+#                          f"Phone: {data['phone']}\nMessage:{data['message']}")
 
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-            connection.starttls()
-            connection.login(own_email, own_pass)
-            connection.sendmail(own_email,
-                                own_email,
-                                msg=email_message)
-        return render_template("contact.html", msg_sent=True)
-    return render_template("contact.html", msg_sent=False)
+#         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+#             connection.starttls()
+#             connection.login(own_email, own_pass)
+#             connection.sendmail(own_email,
+#                                 own_email,
+#                                 msg=email_message)
+#         return render_template("contact.html", msg_sent=True)
+#     return render_template("contact.html", msg_sent=False)
 
 
 if __name__ == "__main__":
