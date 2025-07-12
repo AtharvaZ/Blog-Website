@@ -37,8 +37,8 @@
 </li>
 </ul><ul>
 <li>
-  Make a .env fil in the root directory.
-  Add: SECRET_KEY = "<some passoword you want>"
+  Make a .env fil in the root directory. <br>
+  Add: SECRET_KEY = "some passoword you want"
 </li>
 </ul><ul>
 <li>Install requirements with:<br>
