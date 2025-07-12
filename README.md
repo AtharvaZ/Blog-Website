@@ -35,10 +35,12 @@
 <code>python3 -m venv venv</code><br>
 <code>source venv/bin/activate</code>
 </li>
+</ul><ul>
 <li>
   Make a .env fil in the root directory.
   Add: SECRET_KEY = "<some passoword you want>"
 </li>
+</ul><ul>
 <li>Install requirements with:<br>
   <code>pip install -r requirements.txt</code></li>
 </ul><ul>
