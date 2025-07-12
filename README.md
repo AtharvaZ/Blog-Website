@@ -37,7 +37,7 @@
 </li>
 </ul><ul>
 <li>
-  Make a .env fil in the root directory. <br>
+  Make a .env file in the root directory. <br>
   Add: SECRET_KEY = "some passoword you want"
 </li>
 </ul><ul>
